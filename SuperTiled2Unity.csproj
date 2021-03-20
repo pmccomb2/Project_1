@@ -12,7 +12,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{bdccb9f1-0f10-22e7-20dc-95de59cef309}</ProjectGuid>
+    <ProjectGuid>{c3706dd9-e4e7-c843-cc5a-1c32ec226482}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>SuperTiled2Unity</AssemblyName>
@@ -83,10 +83,10 @@
      <None Include="Assets\SuperTiled2Unity\SuperTiled2Unity.asmdef" />
      <None Include="Assets\SuperTiled2Unity\Examples\Overhead\Maps\Zoria Tileset\readme.txt" />
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.16f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -284,7 +284,7 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/PackageCache/com.unity.ext.nunit@1.0.5/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/PackageCache/com.unity.ext.nunit@1.0.5/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.16f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

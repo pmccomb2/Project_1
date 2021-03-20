@@ -12,7 +12,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{8c1740b1-5323-5fbb-3127-2a6f11ab359f}</ProjectGuid>
+    <ProjectGuid>{850d87ff-3222-74db-a2c7-d44fa4920fe5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>SuperTiled2UnityEditor</AssemblyName>
@@ -169,16 +169,16 @@
      <Compile Include="Assets\SuperTiled2Unity\Scripts\Editor\Loaders\CustomPropertyLoader.cs" />
      <None Include="Assets\SuperTiled2Unity\Scripts\Editor\SuperTiled2UnityEditor.asmdef" />
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.TestRunner">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.TestRunner">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.16f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -376,7 +376,7 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/PackageCache/com.unity.ext.nunit@1.0.5/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/PackageCache/com.unity.ext.nunit@1.0.5/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.16f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -726,7 +726,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="SuperTiled2Unity.csproj">
-      <Project>{bdccb9f1-0f10-22e7-20dc-95de59cef309}</Project>
+      <Project>{c3706dd9-e4e7-c843-cc5a-1c32ec226482}</Project>
       <Name>SuperTiled2Unity</Name>
     </ProjectReference>
   </ItemGroup>

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Player_Animation : MonoBehaviour
 {
+    public Vector2 TeleporttoHut;
     public Vector2 TeleportPosition;
     public Rigidbody2D rb;
     
@@ -14,6 +15,7 @@ public class Player_Animation : MonoBehaviour
     private float input_x;
     private float input_y;
     private bool isWalking;
+    
     
     void Start()
     {
@@ -101,7 +103,13 @@ public class Player_Animation : MonoBehaviour
             //collider.transform.position = TeleportPosition;
             Debug.Log("Entering " + collider.ToString());
         }
+
+        if (collider.tag == "HutDoor"&&isWalking)
+        {
+            transform.position = TeleporttoHut;
+        }
         //Debug.Log(collider.tag);
         Debug.Log("Collision Trigger Detected!");
     }
+    
 }

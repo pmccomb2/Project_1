@@ -12,7 +12,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{404cac75-6bf1-6b15-5a80-9157e3301c82}</ProjectGuid>
+    <ProjectGuid>{fc9c68b0-3acb-d9e5-df6b-4f9abfac2ae2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -52,64 +52,64 @@
   <ItemGroup>
      <Compile Include="Assets\Resources\Player\Player_Animation.cs" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.SpriteShape.Editor">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Path.Editor">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Mathematics">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
  </Reference>
  <Reference Include="Unity.InternalAPIEngineBridge.001">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Sprite.Editor">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Common.Runtime">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.SpriteShape.Runtime">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Mathematics.Editor">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Common.Editor">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.InternalAPIEditorBridge.001">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="com.unity.quicksearch">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/ScriptAssemblies/com.unity.quicksearch.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/ScriptAssemblies/com.unity.quicksearch.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.16f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -301,7 +301,7 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.16f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Library/PackageCache/com.unity.ext.nunit@1.0.5/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>C:/Users/Peter McComb/Desktop/2250 Unity/18a43772-8152-4b9d-a4a9-0ba77b521e68-20201206021016 (1)/Project1/Project_1/Library/PackageCache/com.unity.ext.nunit@1.0.5/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.16f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -651,11 +651,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="SuperTiled2UnityEditor.csproj">
-      <Project>{8c1740b1-5323-5fbb-3127-2a6f11ab359f}</Project>
+      <Project>{850d87ff-3222-74db-a2c7-d44fa4920fe5}</Project>
       <Name>SuperTiled2UnityEditor</Name>
     </ProjectReference>
     <ProjectReference Include="SuperTiled2Unity.csproj">
-      <Project>{bdccb9f1-0f10-22e7-20dc-95de59cef309}</Project>
+      <Project>{c3706dd9-e4e7-c843-cc5a-1c32ec226482}</Project>
       <Name>SuperTiled2Unity</Name>
     </ProjectReference>
   </ItemGroup>
