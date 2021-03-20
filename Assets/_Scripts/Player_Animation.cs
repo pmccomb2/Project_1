@@ -14,6 +14,7 @@ public class Player_Animation : MonoBehaviour
     private float input_x;
     private float input_y;
     private bool isWalking;
+    private bool isMelee = false;
     
     void Start()
     {
@@ -36,10 +37,23 @@ public class Player_Animation : MonoBehaviour
     {
         input_x = Input.GetAxisRaw("Horizontal");
         input_y = Input.GetAxisRaw("Vertical");
-
+        if (Input.GetKeyDown("return") && !isMelee){
+            StartCoroutine(AttackCo());
+        }
 
         isWalking = (Mathf.Abs(input_x) + Mathf.Abs(input_y)) > 0;
     }
+
+    private IEnumerator AttackCo(){
+        print("hi");
+        anim.SetBool("melee", true);
+        isMelee = true;
+        yield return null;
+        anim.SetBool("melee", false);
+        yield return new WaitForSeconds(.33f);
+        isMelee = false;
+    }
+
     private void MovePlayer()
     {
         anim.SetBool("isWalking", isWalking);

@@ -674,10 +674,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 18a43772-8152-4b9d-a4a9-0ba77b521e68
+  cloudProjectId: c60dc3a6-0efb-47e8-b558-a7de5ec4931f
   framebufferDepthMemorylessMode: 0
-  projectName: Project1
-  organizationId: jacz24
+  projectName: LegendOfPete
+  organizationId: tyleramirault
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
