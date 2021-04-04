@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2317192569377338770}
   - component: {fileID: 2317192569377338769}
+  - component: {fileID: 5561898443760356750}
+  - component: {fileID: 5694402061828457314}
   - component: {fileID: 2317192569377338768}
-  - component: {fileID: 7383477493154084037}
-  - component: {fileID: 4021535389862980804}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -85,6 +85,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5561898443760356750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2317192569377338783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e75eb7e1b76696b479d1e54e07e0bf51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blue: {fileID: 22100000, guid: 59c2b3bcffa7e6c47b29369efcf5843b, type: 2}
+  gold: {fileID: 22100000, guid: 3fa188d8ab447df4e8bb14356c5a896f, type: 2}
+--- !u!114 &5694402061828457314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2317192569377338783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de976f91f8ad442ab9e852ee330d97fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TeleportPosition: {x: 0, y: 0}
+  HutEnter: {x: 0, y: 0}
+  HutExit: {x: 0, y: 0}
+  rb: {fileID: 0}
+  healthText: {fileID: 0}
+  movementText: {fileID: 0}
+  shieldText: {fileID: 0}
+  teleportationText: {fileID: 0}
+  projectile: {fileID: 0}
+  blue: {fileID: 0}
+  gold: {fileID: 0}
 --- !u!95 &2317192569377338768
 Animator:
   serializedVersion: 3
@@ -104,29 +141,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7383477493154084037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2317192569377338783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bec0fb16336490f41bfd3c5c8618baab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4021535389862980804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2317192569377338783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6499a035bd8963344aacc312c91a100c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TeleportPosition: {x: 0, y: 0}
-  rb: {fileID: 0}

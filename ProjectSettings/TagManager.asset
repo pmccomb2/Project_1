@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - DoorSilo
+  - Hut_Enter
+  - Hut_exit
+  - GoldArmor
+  - BlueArmor
+  - enemy
+  - Arrow
+  - projectile
   layers:
   - Default
   - TransparentFX
@@ -14,10 +21,10 @@ TagManager:
   - UI
   - 
   - 
+  - Enemy
   - 
-  - 
-  - 
-  - 
+  - Player Projectile
+  - Player
   - 
   - 
   - 

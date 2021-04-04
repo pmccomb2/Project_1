@@ -14,10 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
+    - Assets/GUI/XP-Fill.png
+    - Assets/GUI/XP-Fill.png.meta
+    - Assets/GUI/XP-bar.png
+    - Assets/GUI/XP-bar.png.meta
+    - Assets/_Scripts/Enemy.cs
+    - Assets/_Scripts/EnemyBoss.cs
+    - Assets/_Scripts/Player.cs
     - 
-    m_Values: 01
+    m_Values: 0101010101010101
   RevisionSummary: 
   ChangesSearchValue: 
-  SelectedHistoryRevision: 54c2bdde073148aef19755527c6cfb1f39bed00e
+  SelectedHistoryRevision: 
   HistoryPageNumber: 0
   TabIndex: 0
