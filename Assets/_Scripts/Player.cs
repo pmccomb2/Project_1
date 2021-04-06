@@ -17,12 +17,13 @@ public class Player : MonoBehaviour
     public Text movementText;
     public Text shieldText;
     public Text teleportationText;
+    public Text infoText;
 
     public Text LevelText;
     public Image XPBar;
-    public bool increasingXP;
-    public float xp;
-    public float XPincrease;
+    private bool increasingXP;
+    private float xp;
+    private float XPincrease;
 
     private int health;
     private int movement;
@@ -33,31 +34,25 @@ public class Player : MonoBehaviour
     private bool takingDamage;
     private bool isBlue;
     private bool isGold;
+    private int gameLevel = 1;
     
     Animator anim;
+    Animator energyBallAnimator;
     
-//Changed
     private float input_x;
     private float input_y;
     private bool isWalking;
     private bool isMelee = false;
     private bool isShoot = false;
+    private bool isCharge = false;
+    private bool chargeReady = false;
+    private bool canMove = true;
+    private bool castSpells = false;
 
-    //arrow stuff
     public GameObject projectile;
-    //private Animator animator;
-   // public Inventory playerInventory;
-   // public PlayerState currentState;
-   /*
-    public enum PlayerState
-    {
-        walk,
-        attack,
-        interact,
-        stagger,
-        idle
-    }
-   */
+    public GameObject energyBall;
+    private EnergyBall ball;
+
     public AnimatorOverrideController blue;
     public AnimatorOverrideController gold;
 
@@ -66,6 +61,7 @@ public class Player : MonoBehaviour
 
         GetComponent<Animator>().runtimeAnimatorController = blue as RuntimeAnimatorController;
     }
+
     void Start()
     {
         //sets all variables needed that the begining including gui stats and current armor
@@ -74,17 +70,19 @@ public class Player : MonoBehaviour
         movement = 3;
         shield = 3;
         level = 1;
-        xp = 0.01f;
+        xp = 0.0f;
         teleportationCooldown = 0;
         teleportationEnabled = true;
         anim = GetComponent<Animator>();
         this.takingDamage = false;
         isBlue = false;
         isGold = false;
+        chargeReady = false;
+        infoText.text = "";
         XPincrease = 0f;
         LevelText.text = level.ToString();
         XPBar.fillAmount = 0.0f;
-        updateXP(0.01f);
+        updateXP(0.0f);
     }
         
     // Update is called once per frame
@@ -96,13 +94,26 @@ public class Player : MonoBehaviour
             teleportationCooldown -= Time.deltaTime;
         }
         GetInput();
-        MovePlayer();
-        CheckTeleport();
+        if (canMove){
+            MovePlayer();
+            CheckTeleport();
+        }
         //if players health hits zero the level will restart
         if (health <= 0){
             SceneManager.LoadScene("Scene1");
         }
 
+        checkXP();
+        GameObject eball = GameObject.FindGameObjectWithTag("energyball");
+        if (eball != null && ball == null ){
+            Rigidbody2D body = eball.GetComponent<Rigidbody2D>();
+                if (body.velocity.magnitude < 1.0f){
+                       Destroy(eball);
+                }
+        }
+    }
+
+    void checkXP(){
         if (increasingXP == true){
             XPBar.fillAmount += XPincrease * Time.deltaTime;
             if (XPBar.fillAmount >= 1.0f && XPBar.fillAmount <= xp + XPincrease){
@@ -119,6 +130,7 @@ public class Player : MonoBehaviour
             }
         }
     }
+
 
     void setGUIText(){
         //sets above variables to the gui
@@ -146,9 +158,80 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(SecondAttackCo());
         }
-
+        if (castSpells){
+            checkSpellCast();
+        }
+        
         isWalking = (Mathf.Abs(input_x) + Mathf.Abs(input_y)) > 0;
     }
+
+    private void checkSpellCast(){
+        if(Input.GetKeyDown(KeyCode.RightShift) && isCharge == false){
+                 isCharge = true;
+                 StartCoroutine(chargeEnergyball());
+        }
+
+
+        if(Input.GetKeyUp(KeyCode.RightShift)){
+            canMove = true;
+            if (chargeReady == true && isCharge == true && ball != null){
+                    energyBallAnimator = ball.GetComponent<Animator>();
+                    energyBallAnimator.SetBool("release", true);
+                    StartCoroutine(launchEnergyball());
+            } else {
+                    GameObject obj1 = GameObject.FindGameObjectWithTag("energyball");
+                    Destroy(obj1);
+                    isCharge = false;
+                    GameObject obj2 = GameObject.FindGameObjectWithTag("energyball");
+                    Destroy(obj2);
+                    isCharge = false;
+              }
+            chargeReady = false;
+        }
+        if (ball != null && Input.GetKey(KeyCode.RightShift) == false){
+            GameObject obj1 = GameObject.FindGameObjectWithTag("energyball");
+            Destroy(obj1);
+            isCharge = false;
+        }
+    }
+
+      private IEnumerator chargeEnergyball(){
+        canMove = false;
+        float tempx = transform.position.x + anim.GetFloat("x") * 0.25f;
+        float tempy = transform.position.y + anim.GetFloat("y") * 0.25f;
+        Vector3 temp = new Vector3(tempx, tempy, transform.position.z);
+        ball = Instantiate(energyBall, temp, Quaternion.identity).GetComponent<EnergyBall>();
+        if (ball != null && Input.GetKey(KeyCode.RightShift) == false){
+            GameObject obj1 = GameObject.FindGameObjectWithTag("energyball");
+                    Destroy(obj1);
+                    isCharge = false;
+        }
+        yield return new WaitForSeconds(0.32f);
+        if (ball != null && Input.GetKey(KeyCode.RightShift) == false){
+            GameObject obj1 = GameObject.FindGameObjectWithTag("energyball");
+                    Destroy(obj1);
+                    isCharge = false;
+        }
+        if (ball != null && Input.GetKey(KeyCode.RightShift)){
+            energyBallAnimator = ball.GetComponent<Animator>();
+            energyBallAnimator.SetBool("grow", false);
+            chargeReady = true;
+        }
+        
+    }
+
+    private IEnumerator launchEnergyball(){
+        canMove = true;
+        Vector2 temp = new Vector2(anim.GetFloat("x"), anim.GetFloat("y"));
+        ball.Setup(temp, ChooseProjDirection());
+        ball = null;
+        energyBallAnimator = null;
+        chargeReady = false;
+        yield return new WaitForSeconds(2f);
+        isCharge = false;
+    }
+
+
 
     private IEnumerator AttackCo(){
         //sets a cooldown for melee attack 
@@ -156,7 +239,7 @@ public class Player : MonoBehaviour
         isMelee = true;
         yield return null;
         anim.SetBool("melee", false);
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(.05f);
         isMelee = false;
     }
 
@@ -179,7 +262,7 @@ public class Player : MonoBehaviour
     {
         Vector2 temp = new Vector2(anim.GetFloat("x"), anim.GetFloat("y")); //use movement to do arrow direction
         Arrow arrow = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Arrow>(); //creating arrow and ref to script
-        arrow.Setup(temp, ChooseArrowDirection());  //set up arrow with direction
+        arrow.Setup(temp, ChooseProjDirection());  //set up arrow with direction
     }
 
     private void MultiArrow(){
@@ -195,10 +278,10 @@ public class Player : MonoBehaviour
         arrow2.Setup(temp2, downDirection);
     }
 
-
+  
     
     //use the directions to shoot where facing
-    Vector3 ChooseArrowDirection()
+    Vector3 ChooseProjDirection()
     {
         float temp = Mathf.Atan2(anim.GetFloat("y"), anim.GetFloat("x")) * Mathf.Rad2Deg;
         return new Vector3(0, 0, temp);
@@ -268,7 +351,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void takeDamage(){
+    public void takeDamage(){
         float multiplier = (float) shield / 2f; //takes damage in respect to the sheild stat of the player
         float damage = 6f - multiplier;
         Debug.Log(damage);
@@ -293,13 +376,20 @@ public class Player : MonoBehaviour
              takingDamage = false;
           }
 
+    public int getGameLevel(){
+        return gameLevel;
+    }
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.tag == "DoorSilo" && isWalking)//if the player hits the isTrigger with a certain tag its will teleport to a set location
+        if (collider.tag == "DoorSilo" && isWalking && level >= 2)//if the player hits the isTrigger with a certain tag its will teleport to a set location
         {
             transform.position = TeleportPosition;
+            gameLevel = 2;
             //collider.transform.position = TeleportPosition;
             Debug.Log("Entering " + collider.ToString());
+        } else if (collider.tag == "DoorSilo"){
+            StartCoroutine(displayMessage("Must be level 2 to enter!"));
         }
         if (collider.tag == "Hut_Enter" && isWalking)
         {
@@ -313,10 +403,21 @@ public class Player : MonoBehaviour
             //collider.transform.position = TeleportPosition;
             Debug.Log("Entering " + collider.ToString());
         }
+        if (collider.tag == "wand" && isWalking){
+            GameObject wand = GameObject.FindGameObjectWithTag("wand");
+            Destroy(wand);
+            castSpells = true;
+        }
         
         
         //Debug.Log(collider.tag);
         Debug.Log("Trigger Detected!");
+    }
+
+    public IEnumerator displayMessage(string message){
+        infoText.text = message;
+        yield return new WaitForSeconds(1.5f);
+        infoText.text = "";
     }
 
     public bool IsGold(){

@@ -56,8 +56,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\_Scripts\EnemyBoss.cs" />
+     <Compile Include="Assets\_Scripts\Fireball.cs" />
      <Compile Include="Assets\_Scripts\Player.cs" />
-     <Compile Include="Assets\Resources\Player\Animations\ChangeSkin.cs" />
+     <Compile Include="Assets\_Scripts\ChangeSkin.cs" />
+     <Compile Include="Assets\_Scripts\EnergyBall.cs" />
+     <Compile Include="Assets\_Scripts\Projectile.cs" />
+     <Compile Include="Assets\_Scripts\Mage.cs" />
+     <Compile Include="Assets\_Scripts\MageInstantiate.cs" />
      <Compile Include="Assets\_Scripts\EnemyInstantiate.cs" />
      <Compile Include="Assets\_Scripts\Knockback.cs" />
      <Compile Include="Assets\_Scripts\Enemy.cs" />

@@ -14,16 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/GUI/XP-Fill.png
-    - Assets/GUI/XP-Fill.png.meta
-    - Assets/GUI/XP-bar.png
-    - Assets/GUI/XP-bar.png.meta
+    - Assets/Resources/Player/Animations/Mage.controller
+    - Assets/Resources/Player/Animations/MageFrozen.anim
+    - Assets/Resources/Player/Animations/MageFrozen.anim.meta
+    - Assets/Resources/Prefabs/EnemyBoss.prefab
+    - Assets/Resources/Prefabs/Energyball.prefab
+    - Assets/Resources/Prefabs/Mage.prefab
+    - Assets/Resources/Spritesheets/_rozen_mage.png
+    - Assets/Resources/Spritesheets/_rozen_mage.png.meta
+    - Assets/Scenes/Scene1.unity
     - Assets/_Scripts/Enemy.cs
-    - Assets/_Scripts/EnemyBoss.cs
+    - Assets/_Scripts/EnergyBall.cs
+    - Assets/_Scripts/Fireball.cs
+    - Assets/_Scripts/Mage.cs
+    - Assets/_Scripts/MageInstantiate.cs
+    - Assets/_Scripts/MageInstantiate.cs.meta
     - Assets/_Scripts/Player.cs
     - 
-    m_Values: 0101010101010101
-  RevisionSummary: 
+    m_Values: 0000000000000000000000000000000000
+  RevisionSummary: 'Mage is done, 3 '
   ChangesSearchValue: 
   SelectedHistoryRevision: 
   HistoryPageNumber: 0

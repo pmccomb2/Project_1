@@ -12,6 +12,10 @@ TagManager:
   - enemy
   - Arrow
   - projectile
+  - fireball
+  - mage
+  - wand
+  - energyball
   layers:
   - Default
   - TransparentFX
@@ -22,11 +26,11 @@ TagManager:
   - 
   - 
   - Enemy
-  - 
+  - Energy Ball
   - Player Projectile
   - Player
-  - 
-  - 
+  - Mage
+  - Enemy Projectile
   - 
   - 
   - 

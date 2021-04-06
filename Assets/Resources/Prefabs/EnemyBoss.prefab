@@ -97,14 +97,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a0d0c70bbeaf49c5a783cf1b836a85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.1
+  moveSpeed: 0.2
   rbe: {fileID: 0}
   player: {fileID: 0}
   movement: {x: 0, y: 0}
   lockPos: 0
   health: 10
   mainChar: {fileID: 0}
+  playerScript: {fileID: 0}
   boss: {fileID: 8863741094148821055}
+  wand: {fileID: 7861142034677693759, guid: 349a8378acfde6747bb5efea7ccf5ef5, type: 3}
 --- !u!50 &8863741094148821048
 Rigidbody2D:
   serializedVersion: 4

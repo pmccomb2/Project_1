@@ -8,12 +8,13 @@ public class Knockback : MonoBehaviour
     public float thrust;
     public float knockTime;
     public float damage;
+    public string target;
 
     // Collision with object
     private void OnTriggerEnter2D(Collider2D other)
     {
         // If other object is an enemy
-        if (other.gameObject.CompareTag("enemy"))
+        if (other.gameObject.CompareTag(target))
         {
             Rigidbody2D hit = other.GetComponent<Rigidbody2D>();
             // If rigidbody exists

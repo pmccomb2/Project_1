@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     //Variable instanves
-    public float moveSpeed = 0.01f;
+    public float moveSpeed;
 
     public Rigidbody2D rbe;
 
@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
 
     public int health;
 
-    private bool knockback;
+    protected bool knockback;
 
     public Transform mainChar;
     private bool takingDamage;
@@ -86,7 +86,7 @@ public class Enemy : MonoBehaviour
        }
     }
     
-    void moveCharacter(Vector2 direction)
+    protected void moveCharacter(Vector2 direction)
     {
         // If enemy isn't being knocked back
         if (!knockback){
@@ -120,14 +120,14 @@ public class Enemy : MonoBehaviour
              takingDamage = false;
           }
 
-    void takeDamage(){
+    protected void takeDamage(){
         // Decrement health
         health -= 1;
         // Flash opacity
         StartCoroutine(Flasher());
     }
 
-    void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         // Move enemy
         moveCharacter(movement);

@@ -93,7 +93,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3169554013306373481}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
@@ -125,6 +125,7 @@ MonoBehaviour:
   lockPos: 0
   health: 1
   mainChar: {fileID: 0}
+  playerScript: {fileID: 0}
 --- !u!60 &2821627253062632803
 PolygonCollider2D:
   m_ObjectHideFlags: 0
