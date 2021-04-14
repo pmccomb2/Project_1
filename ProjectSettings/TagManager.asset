@@ -16,6 +16,11 @@ TagManager:
   - mage
   - wand
   - energyball
+  - CaveDoor
+  - SpawnDragon
+  - Chest
+  - coin
+  - wall
   layers:
   - Default
   - TransparentFX
@@ -31,7 +36,7 @@ TagManager:
   - Player
   - Mage
   - Enemy Projectile
-  - 
+  - Wall
   - 
   - 
   - 
@@ -52,4 +57,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Fireballs
+    uniqueID: 4212628795
     locked: 0

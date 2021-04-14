@@ -9,7 +9,7 @@ public class MageInstantiate : MonoBehaviour
     //Private instance array of spawn positions
     private Vector3[] spawnPos;
     //Time delay between enemy spawn
-    public float spawnDelay = 15f;
+    public float spawnDelay = 6f;
 
     public GameObject player;
     private Player playerScript;
@@ -27,9 +27,9 @@ public class MageInstantiate : MonoBehaviour
         if (playerScript.getGameLevel() == 2 && spawnStarted == false){
             spawnStarted = true;
             spawnPos = new Vector3[3];
-            spawnPos[0] = new Vector3(18, 7, 0);
-            spawnPos[1] = new Vector3(20, 5, 0);
-            spawnPos[2] = new Vector3(22, 7, 0);
+            spawnPos[0] = new Vector3(24.48f, 7.8f, 0f);
+            spawnPos[1] = new Vector3(28.27f, 6.7f, 0f);
+            spawnPos[2] = new Vector3(30.9f, 3.5f, 0f);
             StartCoroutine(SpawnCoroutine());
         }
 

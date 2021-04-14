@@ -24,5 +24,8 @@ public class Fireball : Projectile
         if (col.gameObject.tag == "energyball"){
             Destroy(gameObject);
         }
+        if (col.gameObject.tag == "wall"){
+            Destroy(gameObject);
+        }
     }
 }

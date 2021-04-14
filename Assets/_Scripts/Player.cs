@@ -9,8 +9,10 @@ public class Player : MonoBehaviour
 {
     //declaration of all required variables
     public Vector2 TeleportPosition;
+    public Vector2 CaveExit;
     public Vector2 HutEnter;
     public Vector2 HutExit;
+    public Vector2 bossSpawn;
     public Rigidbody2D rb;
 
     public Text healthText;
@@ -18,6 +20,8 @@ public class Player : MonoBehaviour
     public Text shieldText;
     public Text teleportationText;
     public Text infoText;
+    public Text coinText;
+    public Text gameLevelText;
 
     public Text LevelText;
     public Image XPBar;
@@ -29,6 +33,7 @@ public class Player : MonoBehaviour
     private int movement;
     private int shield;
     private int level;
+    private int _coins;
     private float teleportationCooldown;
     private bool teleportationEnabled;
     private bool takingDamage;
@@ -48,13 +53,16 @@ public class Player : MonoBehaviour
     private bool chargeReady = false;
     private bool canMove = true;
     private bool castSpells = false;
-
+    public GameObject boss;
     public GameObject projectile;
     public GameObject energyBall;
     private EnergyBall ball;
 
     public AnimatorOverrideController blue;
     public AnimatorOverrideController gold;
+
+
+
 
     
     public void Blue(){
@@ -66,11 +74,12 @@ public class Player : MonoBehaviour
     {
         //sets all variables needed that the begining including gui stats and current armor
         // GetComponent<ChangeSkin>().Gold();
-        health = 10;
+        health = 15;
         movement = 3;
         shield = 3;
         level = 1;
         xp = 0.0f;
+        coins = 0;
         teleportationCooldown = 0;
         teleportationEnabled = true;
         anim = GetComponent<Animator>();
@@ -83,27 +92,30 @@ public class Player : MonoBehaviour
         LevelText.text = level.ToString();
         XPBar.fillAmount = 0.0f;
         updateXP(0.0f);
+        updateCoinText();
     }
-        
+
     // Update is called once per frame
     void Update()
     {
         //reduces cooldown on teleport after its used
+        
         setGUIText();
         if (teleportationCooldown > 0){
             teleportationCooldown -= Time.deltaTime;
         }
-        GetInput();
         if (canMove){
             MovePlayer();
             CheckTeleport();
         }
+        GetInput();
+        
         //if players health hits zero the level will restart
         if (health <= 0){
-            SceneManager.LoadScene("Scene1");
+            SceneManager.LoadScene("TitleScreen");
         }
 
-        checkXP();
+        IncreaseFillAmount();
         GameObject eball = GameObject.FindGameObjectWithTag("energyball");
         if (eball != null && ball == null ){
             Rigidbody2D body = eball.GetComponent<Rigidbody2D>();
@@ -113,14 +125,14 @@ public class Player : MonoBehaviour
         }
     }
 
-    void checkXP(){
+    void IncreaseFillAmount(){
         if (increasingXP == true){
             XPBar.fillAmount += XPincrease * Time.deltaTime;
             if (XPBar.fillAmount >= 1.0f && XPBar.fillAmount <= xp + XPincrease){
                     XPincrease = xp + XPincrease - 1.0f;
                     xp = 0f;
                     level += 1;
-                    LevelText.text = level.ToString();
+                    UpdateLevelText();
                     XPBar.fillAmount = 0f;
             }
             if (XPBar.fillAmount >= xp + XPincrease){
@@ -131,18 +143,27 @@ public class Player : MonoBehaviour
         }
     }
 
+    void UpdateLevelText(){
+        LevelText.text = level.ToString();
+    }
+
 
     void setGUIText(){
         //sets above variables to the gui
-        healthText.text = health.ToString() + " / 10";
-        movementText.text = movement.ToString() + " / 10";
-        shieldText.text = shield.ToString() + " / 10";
+        healthText.text = health.ToString() + " / 20";
+        movementText.text = movement.ToString() + " / 20";
+        shieldText.text = shield.ToString() + " / 20";
         teleportationText.text = ((int) teleportationCooldown).ToString();
+        gameLevelText.text = "Level " + gameLevel.ToString();
     }
 
     public void updateXP(float newXP){
         increasingXP = true;
         XPincrease += newXP;
+    }
+
+    public int GetExperienceLevel(){
+        return level;
     }
 
     private void GetInput()
@@ -294,8 +315,11 @@ public class Player : MonoBehaviour
     }
 //checks if teleport is available if so searches for the space bar as well as a direction 
 //moves character 1 unit in the direction being held
+
+
     private void CheckTeleport(){
-        if (Mathf.Floor(teleportationCooldown) == 0){
+        Debug.Log("check");
+        if (teleportationCooldown < 1f){
             teleportationEnabled = true;
         }
         else {teleportationEnabled = false;}
@@ -380,35 +404,57 @@ public class Player : MonoBehaviour
         return gameLevel;
     }
 
+    public int coins {
+        get {
+            return _coins;
+        }
+        set {
+            _coins = value;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.tag == "DoorSilo" && isWalking && level >= 2)//if the player hits the isTrigger with a certain tag its will teleport to a set location
         {
             transform.position = TeleportPosition;
             gameLevel = 2;
-            //collider.transform.position = TeleportPosition;
             Debug.Log("Entering " + collider.ToString());
         } else if (collider.tag == "DoorSilo"){
             StartCoroutine(displayMessage("Must be level 2 to enter!"));
+            infoText.color = Color.red;
         }
         if (collider.tag == "Hut_Enter" && isWalking)
         {
             transform.position = HutEnter;
-            //collider.transform.position = TeleportPosition;
             Debug.Log("Entering " + collider.ToString());
         }
         if (collider.tag == "Hut_exit" && isWalking)
         {
             transform.position = HutExit;
-            //collider.transform.position = TeleportPosition;
             Debug.Log("Entering " + collider.ToString());
         }
-        if (collider.tag == "wand" && isWalking){
+
+        if (collider.tag == "CaveDoor" && isWalking)
+        {
+            transform.position = CaveExit;
+            Debug.Log("Entering " + collider.ToString());
+        }
+        if (collider.tag == "wand"){
             GameObject wand = GameObject.FindGameObjectWithTag("wand");
             Destroy(wand);
             castSpells = true;
         }
-        
+        if (collider.tag == "SpawnDragon" && isWalking)
+        {
+            Instantiate(boss, bossSpawn, Quaternion.identity);
+            Debug.Log("Boss has spawned " + collider.ToString());
+        }
+        if (collider.tag == "coin"){
+            Destroy(collider.gameObject);
+            coins += 1;
+            updateCoinText();
+        }
         
         //Debug.Log(collider.tag);
         Debug.Log("Trigger Detected!");
@@ -422,6 +468,17 @@ public class Player : MonoBehaviour
 
     public bool IsGold(){
         return isGold;
+    }
+
+    public void updateCoinText(){
+        if (coins > 9){
+            coinText.text = "0" + coins.ToString();
+        }
+        if (coins > 99){
+            coinText.text = coins.ToString();
+        } else {
+            coinText.text = "00" + coins.ToString();
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D col){
@@ -447,6 +504,8 @@ public class Player : MonoBehaviour
             isGold = false;
             movement = 8;
             shield = 6;
+            StartCoroutine(displayMessage("Armor +3\nSpeed +5"));
+            infoText.color = Color.blue;
             Debug.Log("Armor " + GetComponent<Collider>().ToString());
         }
         if (col.gameObject.tag == "GoldArmor" && isWalking)//colliding with gold armor will change stats and animations
@@ -457,10 +516,31 @@ public class Player : MonoBehaviour
             shield = 8;
             isGold = true;
             isBlue = false;
+            StartCoroutine(displayMessage("Armor +5\nSpeed +3"));
+            infoText.color = Color.yellow;
             Debug.Log("Armor " + GetComponent<Collider>().ToString());
             Debug.Log("Collision Detected!");
         }
+        if (col.gameObject.tag == "Chest")
+        {
+            if(coins >= 5 )
+            {
+                if(health <= 15){
+                    health += 5;
+                    coins -= 5;
+                    updateCoinText();
+            } else{ 
+                health = 20;
+                coins -= 5;
+                updateCoinText();
+            }
+            StartCoroutine(displayMessage("Health +5"));
+            infoText.color = Color.magenta;
+            
+        }
+
+        
     }
 
     //test push 
-}
+}}

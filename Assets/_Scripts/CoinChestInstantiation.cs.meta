@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 564ab8e4b85b8416693271bd00c1a478
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Coin: {fileID: 3743056682624710889, guid: b84bd4d20abdf5b449cf14b1e5de4935, type: 3}
+  - TreasureChest: {fileID: 9079365451587551095, guid: c4d32c6fbfaec43d3ac95bdda7a29e67, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

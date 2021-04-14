@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 6287977790286460621, guid: 29265730a4e06a74b95edadb25cb3527, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -104,11 +104,11 @@ MonoBehaviour:
   movement: {x: 0, y: 0}
   lockPos: 0
   health: 0
-  mainChar: {fileID: 0}
+  playerTransform: {fileID: 0}
   playerScript: {fileID: 0}
   mage: {fileID: 5794921582436000502}
   anim: {fileID: 0}
-  projectile: {fileID: 2077114154537760306, guid: 88fd84bcbf589104bbcebc5dc715ef41, type: 3}
+  projectile: {fileID: 2077114154537760306, guid: 2dc748d576b6ff84dbe8320e664a31c8, type: 3}
 --- !u!50 &5629044720025485913
 Rigidbody2D:
   serializedVersion: 4

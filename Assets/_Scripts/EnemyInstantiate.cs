@@ -46,7 +46,7 @@ public class EnemyInstantiate : MonoBehaviour
      }
      //Enemy boss instantiation with 15 second delay from start
      IEnumerator BossCoroutine(){
-         yield return new WaitForSeconds(15f);
+         yield return new WaitForSeconds(10f);
          Instantiate(EnemyBoss,spawnPos[1],Quaternion.identity);
 
      }

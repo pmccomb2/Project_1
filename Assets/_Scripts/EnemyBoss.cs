@@ -38,7 +38,7 @@ public class EnemyBoss : Enemy
     public override void Update()
     {
         // Set direction
-       Vector3 direction = mainChar.position - transform.position;
+       Vector3 direction = playerTransform.position - transform.position;
        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
        rbe.rotation = angle;
        direction.Normalize();

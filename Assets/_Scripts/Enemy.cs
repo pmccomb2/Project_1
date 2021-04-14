@@ -19,8 +19,8 @@ public class Enemy : MonoBehaviour
 
     protected bool knockback;
 
-    public Transform mainChar;
-    private bool takingDamage;
+    public Transform playerTransform;
+    protected bool takingDamage;
     private GameObject playerObject;
     public Player playerScript;
 
@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour
         // Lock enemy to point at enemy transform
         rbe  = this.GetComponent<Rigidbody2D>();
         // Set player transform reference
-        mainChar = GameObject.FindGameObjectWithTag("Player").transform;
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         // Set health
         health = 2;
         // Set status booleans
@@ -69,7 +69,7 @@ public class Enemy : MonoBehaviour
         // If enemy isn't being knocked back
         if (!knockback){
             // Move enemy towards player
-            Vector3 direction = mainChar.position - transform.position;
+            Vector3 direction = playerTransform.position - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             rbe.rotation = angle;
             direction.Normalize();
@@ -77,16 +77,20 @@ public class Enemy : MonoBehaviour
         }
 
        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x,lockPos,lockPos);
-
+        CheckHealth();
        // If health is 0, destroy instance 
-       if (health <=0)
+       
+    }
+
+    void CheckHealth(){
+        if (health <=0)
        {
            playerScript.updateXP(0.2f);
            Destroy(this.gameObject);
        }
     }
     
-    protected void moveCharacter(Vector2 direction)
+    protected void moveEnemy(Vector2 direction)
     {
         // If enemy isn't being knocked back
         if (!knockback){
@@ -105,7 +109,7 @@ public class Enemy : MonoBehaviour
              // Set status boolean
              takingDamage = true;
              // Flash opacity four times in a loop
-             for (int i = 0; i < 4; i++)
+             for (int i = 0; i < 2; i++)
              {
               GetComponent<Renderer>().material.color = new Color(1f, 1f, 1f, 0.3f);
               yield return new WaitForSeconds(.1f);
@@ -122,7 +126,11 @@ public class Enemy : MonoBehaviour
 
     protected void takeDamage(){
         // Decrement health
-        health -= 1;
+        if (playerScript.getGameLevel() > 1){
+            health -= 1 * (int) ((float)playerScript.getGameLevel() / 1.5f);
+        }
+        else { health -= 1;}
+
         // Flash opacity
         StartCoroutine(Flasher());
     }
@@ -130,10 +138,10 @@ public class Enemy : MonoBehaviour
     protected virtual void FixedUpdate()
     {
         // Move enemy
-        moveCharacter(movement);
+        moveEnemy(movement);
     }
 
-    private IEnumerator Knockback(){
+    protected IEnumerator Knockback(){
         // Set status boolean
         knockback = true;
         // Get rigid body references
@@ -153,7 +161,7 @@ public class Enemy : MonoBehaviour
         knockback = false;
     }
 
-    private void OnCollisionEnter2D(Collision2D col){
+    public void OnCollisionEnter2D(Collision2D col){
         // Collision with arrow
         if (col.gameObject.tag == "projectile"){
             // If enemy isn't taking damage
@@ -162,6 +170,14 @@ public class Enemy : MonoBehaviour
                 takeDamage();
             }
         }
+        if (col.gameObject.tag == "energyball"){
+            // If enemy isn't taking damage
+            if (!takingDamage){
+                // Take damage
+                takeDamage();
+            }
+        }
+
         // Collision with player
         if (col.gameObject.tag == "Player"){
             // If player's melee attack is active and enemy isn't taking damage
@@ -175,6 +191,14 @@ public class Enemy : MonoBehaviour
                    StartCoroutine(Knockback());
                 }
             }
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "energyball" )
+        {
+            takeDamage();
         }
     }
 }

@@ -56,16 +56,23 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\_Scripts\EnemyBoss.cs" />
+     <Compile Include="Assets\_Scripts\TreasureChest.cs" />
+     <Compile Include="Assets\_Scripts\Inventory.cs" />
      <Compile Include="Assets\_Scripts\Fireball.cs" />
      <Compile Include="Assets\_Scripts\Player.cs" />
      <Compile Include="Assets\_Scripts\ChangeSkin.cs" />
+     <Compile Include="Assets\_Scripts\Coin.cs" />
      <Compile Include="Assets\_Scripts\EnergyBall.cs" />
+     <Compile Include="Assets\_Scripts\TitleScreen.cs" />
+     <Compile Include="Assets\_Scripts\CoinChestInstantiation.cs" />
      <Compile Include="Assets\_Scripts\Projectile.cs" />
      <Compile Include="Assets\_Scripts\Mage.cs" />
      <Compile Include="Assets\_Scripts\MageInstantiate.cs" />
      <Compile Include="Assets\_Scripts\EnemyInstantiate.cs" />
+     <Compile Include="Assets\_Scripts\Dragon.cs" />
      <Compile Include="Assets\_Scripts\Knockback.cs" />
      <Compile Include="Assets\_Scripts\Enemy.cs" />
+     <Compile Include="Assets\_Scripts\Item.cs" />
      <Compile Include="Assets\_Scripts\Arrow.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
